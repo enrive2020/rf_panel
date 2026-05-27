@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+logs/
+*.log
+
+config/local_settings.json
+client_scan_tree.txt
+
+dist/
+build/
+*.spec
