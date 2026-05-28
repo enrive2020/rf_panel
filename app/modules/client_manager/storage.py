@@ -4,10 +4,13 @@ from pathlib import Path
 
 
 class Storage:
-    def __init__(self, db_path="rf_panel.db"):
-        self.db_path = db_path
-        self.conn = sqlite3.connect(db_path)
+    def __init__(self, db_path):
+        self.db_path = Path(db_path)
+        self.db_path.parent.mkdir(parents=True, exist_ok=True)
+
+        self.conn = sqlite3.connect(self.db_path)
         self.conn.row_factory = sqlite3.Row
+
         self.create_tables()
 
     def create_tables(self):

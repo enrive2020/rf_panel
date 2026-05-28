@@ -28,7 +28,16 @@ cache/
 client_scan_tree.txt
 *.dat
 *.bak
-
+а
 # OS
 Thumbs.db
 .DS_Store
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Runtime data
+app/data/*
+!app/data/.gitkeep

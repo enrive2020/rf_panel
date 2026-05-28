@@ -1,9 +1,6 @@
 from client_scanner import ClientScanner
 from storage import Storage
-
-
-CLIENT_PATH = r"D:\RF-Platform\Client"
-
+from config import CLIENT_PATH, DB_PATH, ensure_data_dirs
 
 
 def size_mb(value):
@@ -11,14 +8,17 @@ def size_mb(value):
 
 
 def main():
+    ensure_data_dirs()
+
     scanner = ClientScanner(CLIENT_PATH)
-    storage = Storage("scan.db")
+    storage = Storage(DB_PATH)
 
     report = scanner.scan()
     session_id = storage.save_scan(report)
 
     print("Сканирование завершено")
     print(f"Session ID: {session_id}")
+    print(f"Database: {DB_PATH}")
     print(f"Client: {report['client_path']}")
     print(f"Files: {report['total_files']}")
     print(f"Folders: {report['total_folders']}")
