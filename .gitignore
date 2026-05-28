@@ -1,43 +1,19 @@
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-
-# Venv
-venv/
-.venv/
-
-# Build
-build/
-dist/
-
-# IDE
-.vscode/
-.idea/
-
-# Logs
-logs/
-*.log
-
-# Temp
-temp/
-cache/
-
-# RF files
-client_scan_tree.txt
-*.dat
-*.bak
-а
-# OS
-Thumbs.db
-.DS_Store
-
-# Databases
 *.db
 *.sqlite
 *.sqlite3
 
-# Runtime data
 app/data/*
 !app/data/.gitkeep
+
+app/temp/*
+!app/temp/.gitkeep
+
+app/exports/*
+!app/exports/.gitkeep
+
+app/logs/*
+!app/logs/.gitkeep
+
+__pycache__/
+.idea/
+.venv/

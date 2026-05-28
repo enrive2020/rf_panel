@@ -1,6 +1,6 @@
-from client_scanner import ClientScanner
-from storage import Storage
-from config import CLIENT_PATH, DB_PATH, ensure_data_dirs
+from app.config import CLIENT_PATH, DB_PATH, ensure_runtime_dirs
+from app.modules.client_manager.client_scanner import ClientScanner
+from app.modules.client_manager.storage import Storage
 
 
 def size_mb(value):
@@ -8,7 +8,7 @@ def size_mb(value):
 
 
 def main():
-    ensure_data_dirs()
+    ensure_runtime_dirs()
 
     scanner = ClientScanner(CLIENT_PATH)
     storage = Storage(DB_PATH)
